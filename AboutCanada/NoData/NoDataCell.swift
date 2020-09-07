@@ -32,7 +32,7 @@ final class NoDataCell: UITableViewCell, Reusable {
             views: descriptionLabel
         )
     }
-    
+
     private func makeLabel() -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
