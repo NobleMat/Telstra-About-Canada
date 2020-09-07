@@ -76,6 +76,21 @@ class AboutPresenterTests: XCTestCase {
         XCTAssertEqual(mockDisplay.setItemsCalledCount, 1)
         XCTAssertEqual(mockDisplay.setItems?.count, 2)
     }
+
+    func testRefreshData() {
+        // Given
+        presenter.displayDidLoad()
+        mockManager.fetchDataCompletion?(.success(About.mock(rows: [Row.mock(), Row.mock()])))
+
+        // Then
+        XCTAssertEqual(mockManager.fetchDataCalledCount, 1)
+
+        // When
+        presenter.refreshData()
+
+        // Then
+        XCTAssertEqual(mockManager.fetchDataCalledCount, 2)
+    }
 }
 
 // MARK: - Private
