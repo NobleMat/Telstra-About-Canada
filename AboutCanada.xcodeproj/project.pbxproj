@@ -20,12 +20,18 @@
 		FFC443462505CE9C004A04E9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443452505CE9C004A04E9 /* Actions.swift */; };
 		FFC443482505CEC6004A04E9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443472505CEC6004A04E9 /* Reusable.swift */; };
 		FFC4434C2505CF08004A04E9 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */; };
-		FFC4434E2505CF3D004A04E9 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4434D2505CF3D004A04E9 /* TableViewSection.swift */; };
 		FFC443532505D2BA004A04E9 /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443522505D2BA004A04E9 /* APIManaging.swift */; };
 		FFC443552505D2F7004A04E9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443542505D2F7004A04E9 /* HTTPMethod.swift */; };
 		FFC443572505D30B004A04E9 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443562505D30B004A04E9 /* HTTPHeader.swift */; };
 		FFC443592505D34E004A04E9 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443582505D34E004A04E9 /* DataResult.swift */; };
 		FFC4435B2505D3CD004A04E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4435A2505D3CD004A04E9 /* API.swift */; };
+		FFC443632505D563004A04E9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4435F2505D563004A04E9 /* AboutViewController.swift */; };
+		FFC443652505D563004A04E9 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443612505D563004A04E9 /* AboutPresenter.swift */; };
+		FFC443672505D5A5004A04E9 /* AboutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443662505D5A5004A04E9 /* AboutManager.swift */; };
+		FFC443692505D5FE004A04E9 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443682505D5FE004A04E9 /* Localizable.swift */; };
+		FFC4436C2505D64C004A04E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFC4436B2505D64C004A04E9 /* Localizable.strings */; };
+		FFC4436F2505D9C1004A04E9 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4436E2505D9C1004A04E9 /* AboutCell.swift */; };
+		FFC443712505DA45004A04E9 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443702505DA45004A04E9 /* About.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +62,18 @@
 		FFC443452505CE9C004A04E9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		FFC443472505CEC6004A04E9 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
-		FFC4434D2505CF3D004A04E9 /* TableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
 		FFC443522505D2BA004A04E9 /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
 		FFC443542505D2F7004A04E9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		FFC443562505D30B004A04E9 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		FFC443582505D34E004A04E9 /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
 		FFC4435A2505D3CD004A04E9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FFC4435F2505D563004A04E9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		FFC443612505D563004A04E9 /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		FFC443662505D5A5004A04E9 /* AboutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutManager.swift; sourceTree = "<group>"; };
+		FFC443682505D5FE004A04E9 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		FFC4436B2505D64C004A04E9 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FFC4436E2505D9C1004A04E9 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
+		FFC443702505DA45004A04E9 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +115,12 @@
 		FFC443102505CB64004A04E9 /* AboutCanada */ = {
 			isa = PBXGroup;
 			children = (
-				FFC443352505CD13004A04E9 /* Helpers */,
-				FFC443112505CB64004A04E9 /* AppDelegate.swift */,
-				FFC4431A2505CB65004A04E9 /* Assets.xcassets */,
-				FFC4431C2505CB65004A04E9 /* LaunchScreen.storyboard */,
 				FFC4431F2505CB65004A04E9 /* Info.plist */,
+				FFC443112505CB64004A04E9 /* AppDelegate.swift */,
+				FFC4435C2505D54A004A04E9 /* About */,
+				FFC443352505CD13004A04E9 /* Helpers */,
+				FFC4431C2505CB65004A04E9 /* LaunchScreen.storyboard */,
+				FFC4436A2505D63C004A04E9 /* Resources */,
 			);
 			path = AboutCanada;
 			sourceTree = "<group>";
@@ -125,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC443452505CE9C004A04E9 /* Actions.swift */,
-				FFC4434D2505CF3D004A04E9 /* TableViewSection.swift */,
+				FFC443682505D5FE004A04E9 /* Localizable.swift */,
 				FFC4433B2505CD60004A04E9 /* Display */,
 				FFC443512505D29B004A04E9 /* Networking */,
 				FFC443422505CE72004A04E9 /* Protocols */,
@@ -173,6 +186,59 @@
 				FFC443542505D2F7004A04E9 /* HTTPMethod.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		FFC4435C2505D54A004A04E9 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4435D2505D554004A04E9 /* API */,
+				FFC4436D2505D9B4004A04E9 /* Cells */,
+				FFC443732505E151004A04E9 /* Presenter */,
+				FFC443722505E146004A04E9 /* View */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		FFC4435D2505D554004A04E9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FFC443702505DA45004A04E9 /* About.swift */,
+				FFC443662505D5A5004A04E9 /* AboutManager.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		FFC4436A2505D63C004A04E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4436B2505D64C004A04E9 /* Localizable.strings */,
+				FFC4431A2505CB65004A04E9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFC4436D2505D9B4004A04E9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4436E2505D9C1004A04E9 /* AboutCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		FFC443722505E146004A04E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4435F2505D563004A04E9 /* AboutViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FFC443732505E151004A04E9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FFC443612505D563004A04E9 /* AboutPresenter.swift */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC4431E2505CB65004A04E9 /* LaunchScreen.storyboard in Resources */,
+				FFC4436C2505D64C004A04E9 /* Localizable.strings in Resources */,
 				FFC4431B2505CB65004A04E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,18 +385,23 @@
 			files = (
 				FFC443442505CE82004A04E9 /* CellDisplayable.swift in Sources */,
 				FFC443462505CE9C004A04E9 /* Actions.swift in Sources */,
+				FFC443692505D5FE004A04E9 /* Localizable.swift in Sources */,
 				FFC443552505D2F7004A04E9 /* HTTPMethod.swift in Sources */,
 				FFC443592505D34E004A04E9 /* DataResult.swift in Sources */,
 				FFC4433F2505CD92004A04E9 /* TitleDisplaying.swift in Sources */,
+				FFC443672505D5A5004A04E9 /* AboutManager.swift in Sources */,
 				FFC443482505CEC6004A04E9 /* Reusable.swift in Sources */,
 				FFC443122505CB64004A04E9 /* AppDelegate.swift in Sources */,
 				FFC4433A2505CD56004A04E9 /* UIFont+Extensions.swift in Sources */,
+				FFC443652505D563004A04E9 /* AboutPresenter.swift in Sources */,
 				FFC4433D2505CD69004A04E9 /* Display.swift in Sources */,
+				FFC443632505D563004A04E9 /* AboutViewController.swift in Sources */,
 				FFC443412505CDD5004A04E9 /* LoadingDisplaying.swift in Sources */,
 				FFC443532505D2BA004A04E9 /* APIManaging.swift in Sources */,
-				FFC4434E2505CF3D004A04E9 /* TableViewSection.swift in Sources */,
 				FFC443382505CD47004A04E9 /* UIColor+Extensions.swift in Sources */,
+				FFC443712505DA45004A04E9 /* About.swift in Sources */,
 				FFC443572505D30B004A04E9 /* HTTPHeader.swift in Sources */,
+				FFC4436F2505D9C1004A04E9 /* AboutCell.swift in Sources */,
 				FFC4435B2505D3CD004A04E9 /* API.swift in Sources */,
 				FFC4434C2505CF08004A04E9 /* UIView+Embed.swift in Sources */,
 			);
