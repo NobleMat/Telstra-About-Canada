@@ -138,9 +138,9 @@
 		FFC443272505CB66004A04E9 /* AboutCanadaTests */ = {
 			isa = PBXGroup;
 			children = (
-				FFC4437A2506232A004A04E9 /* Mocks */,
-				FFC443282505CB66004A04E9 /* AboutPresenterTests.swift */,
 				FFC4432A2505CB66004A04E9 /* Info.plist */,
+				FFC443282505CB66004A04E9 /* AboutPresenterTests.swift */,
+				FFC4437A2506232A004A04E9 /* Mocks */,
 			);
 			path = AboutCanadaTests;
 			sourceTree = "<group>";
