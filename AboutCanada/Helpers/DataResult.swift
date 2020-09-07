@@ -19,14 +19,17 @@ extension DataResult {
         decoder: JSONDecoder = JSONDecoder(),
         completion: @escaping (DecodableResult<Response>) -> Void
     ) -> Self {
-        guard case .success(let dataResponse) = self else {
+        guard case .success(let dataResponse) = self,
+            let jsonString = String(data: dataResponse, encoding: .ascii),
+            let acceptableData = jsonString.data(using: .utf8, allowLossyConversion: false)
+        else {
             queue.async {
                 completion(.failure(APIError.cannotProcessData))
             }
             return self
         }
         do {
-            let response = try decoder.decode(type, from: dataResponse)
+            let response = try decoder.decode(type, from: acceptableData)
             queue.async {
                 completion(.success(response))
             }
@@ -37,5 +40,35 @@ extension DataResult {
             }
             return self
         }
+    }
+
+    /// This func just converts a DataResult into a completion block
+    /// - Parameters:
+    ///   - queue: The queue that the response should be in
+    ///   - completion: The completion block that returns the converted response
+    /// - Returns: self since this is discardable
+    @discardableResult
+    func response(
+        queue: DispatchQueue = DispatchQueue.main,
+        completion: @escaping (DataResult) -> Void
+    ) -> Self {
+        guard case .success(let response) = self else {
+            queue.async {
+                completion(.failure(APIError.cannotProcessData))
+            }
+            return self
+        }
+        queue.async {
+            completion(.success(response))
+        }
+        return self
+    }
+
+    private func customDataDecoder(decoder: Decoder) throws -> Data {
+        let container = try decoder.singleValueContainer()
+        let string = try container.decode(String.self)
+
+//        let jsonString = String(data: dataResponse, encoding: .ascii)
+        return string.data(using: .utf8) ?? Data()
     }
 }

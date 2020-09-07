@@ -6,6 +6,7 @@ protocol AboutDisplaying: Display {
 protocol AboutPresenting {
 
     func displayDidLoad()
+    func refreshData()
 }
 
 final class AboutPresenter {
@@ -34,6 +35,11 @@ extension AboutPresenter: AboutPresenting {
 
     func displayDidLoad() {
         display.set(title: Strings.about.title)
+        fetchData()
+    }
+
+    func refreshData() {
+        fetchData()
     }
 }
 
@@ -60,7 +66,9 @@ private extension AboutPresenter {
     func setItems(using data: About) {
         display.set(title: data.title)
         display.set(
-            items: data.rows.compactMap {
+            items: data.rows.filter {
+                !$0.isNil
+            }.compactMap {
                 AboutItem(using: $0)
             }
         )
@@ -68,5 +76,6 @@ private extension AboutPresenter {
 
     func setError(with error: Error) {
         display.set(title: Strings.about.title)
+        display.set(items: [])
     }
 }

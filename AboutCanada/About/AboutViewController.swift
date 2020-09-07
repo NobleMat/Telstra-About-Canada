@@ -17,6 +17,8 @@ final class AboutViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
+        tableView.refreshControl = refreshControl
+        tableView.allowsSelection = false
         return tableView
     }()
 
@@ -24,6 +26,12 @@ final class AboutViewController: UIViewController {
         didSet {
             tableView.reloadData()
         }
+    }
+
+    private var refreshControl: UIRefreshControl {
+        let refreshControl = UIRefreshControl.default
+        refreshControl.addTarget(self, action: Selector.refresh, for: UIControl.Event.valueChanged)
+        return refreshControl
     }
 
     // MARK: Public
@@ -37,11 +45,11 @@ final class AboutViewController: UIViewController {
 
         view.backgroundColor = UIColor.viewBackground
 
+        setupViews()
+
         presenter = AboutPresenter(display: self)
 
         presenter.displayDidLoad()
-
-        setupViews()
     }
 }
 
@@ -52,6 +60,9 @@ final class AboutViewController: UIViewController {
 extension AboutViewController: AboutDisplaying {
 
     func set(items: TableViewItems) {
+        if tableView.refreshControl?.isRefreshing == true {
+            tableView.refreshControl?.endRefreshing()
+        }
         self.items = items
     }
 }
@@ -102,4 +113,15 @@ private extension AboutViewController {
 
         view.addConstraints(constraints)
     }
+
+    @objc
+    func refresh() {
+        presenter.refreshData()
+    }
+}
+
+// MARK: Selector
+
+private extension Selector {
+    static var refresh = #selector(AboutViewController.refresh)
 }

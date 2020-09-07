@@ -32,6 +32,9 @@
 		FFC4436C2505D64C004A04E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFC4436B2505D64C004A04E9 /* Localizable.strings */; };
 		FFC4436F2505D9C1004A04E9 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4436E2505D9C1004A04E9 /* AboutCell.swift */; };
 		FFC443712505DA45004A04E9 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443702505DA45004A04E9 /* About.swift */; };
+		FFC443752505E97A004A04E9 /* UIRefreshControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443742505E97A004A04E9 /* UIRefreshControl+Extensions.swift */; };
+		FFC443772505EB84004A04E9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443762505EB84004A04E9 /* UIImageView+Extensions.swift */; };
+		FFC443792505FA70004A04E9 /* Optional+isNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443782505FA70004A04E9 /* Optional+isNil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		FFC4436B2505D64C004A04E9 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FFC4436E2505D9C1004A04E9 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		FFC443702505DA45004A04E9 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		FFC443742505E97A004A04E9 /* UIRefreshControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extensions.swift"; sourceTree = "<group>"; };
+		FFC443762505EB84004A04E9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		FFC443782505FA70004A04E9 /* Optional+isNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isNil.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 			children = (
 				FFC443452505CE9C004A04E9 /* Actions.swift */,
 				FFC443682505D5FE004A04E9 /* Localizable.swift */,
+				FFC443782505FA70004A04E9 /* Optional+isNil.swift */,
 				FFC4433B2505CD60004A04E9 /* Display */,
 				FFC443512505D29B004A04E9 /* Networking */,
 				FFC443422505CE72004A04E9 /* Protocols */,
@@ -152,6 +159,8 @@
 			children = (
 				FFC443372505CD47004A04E9 /* UIColor+Extensions.swift */,
 				FFC443392505CD56004A04E9 /* UIFont+Extensions.swift */,
+				FFC443762505EB84004A04E9 /* UIImageView+Extensions.swift */,
+				FFC443742505E97A004A04E9 /* UIRefreshControl+Extensions.swift */,
 				FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */,
 			);
 			name = UIKit;
@@ -390,6 +399,8 @@
 				FFC443592505D34E004A04E9 /* DataResult.swift in Sources */,
 				FFC4433F2505CD92004A04E9 /* TitleDisplaying.swift in Sources */,
 				FFC443672505D5A5004A04E9 /* AboutManager.swift in Sources */,
+				FFC443752505E97A004A04E9 /* UIRefreshControl+Extensions.swift in Sources */,
+				FFC443772505EB84004A04E9 /* UIImageView+Extensions.swift in Sources */,
 				FFC443482505CEC6004A04E9 /* Reusable.swift in Sources */,
 				FFC443122505CB64004A04E9 /* AppDelegate.swift in Sources */,
 				FFC4433A2505CD56004A04E9 /* UIFont+Extensions.swift in Sources */,
@@ -404,6 +415,7 @@
 				FFC4436F2505D9C1004A04E9 /* AboutCell.swift in Sources */,
 				FFC4435B2505D3CD004A04E9 /* API.swift in Sources */,
 				FFC4434C2505CF08004A04E9 /* UIView+Embed.swift in Sources */,
+				FFC443792505FA70004A04E9 /* Optional+isNil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

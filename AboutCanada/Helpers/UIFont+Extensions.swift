@@ -2,6 +2,28 @@ import UIKit
 
 extension UIFont {
 
+    enum FontString: String {
+        case regular = "AvenirNext-Regular"
+        case light = "AvenirNext-UltraLight"
+        case semiBold = "AvenirNext-DemiBold"
+
+        var name: String {
+            return rawValue
+        }
+    }
+
+    static func regularFont(with size: CGFloat) -> UIFont {
+        return UIFont(name: FontString.regular.name, size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+
+    static func lightFont(with size: CGFloat) -> UIFont {
+        return UIFont(name: FontString.light.name, size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+
+    static func semiBoldFont(with size: CGFloat) -> UIFont {
+        return UIFont(name: FontString.semiBold.name, size: size) ?? UIFont.boldSystemFont(ofSize: size)
+    }
+
     /// Helper Function to return a scaled font using testStyle and default size.
     /// This has a maximum font size of 2 times the default size.
     /// - Parameters:

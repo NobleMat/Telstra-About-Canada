@@ -19,8 +19,9 @@ extension APIManager: APIManaging {
 
     func request(
         path: String,
+        isImage: Bool = false,
         method: HTTPMethod = HTTPMethod.get,
-        headers: HTTPHeaders = [HTTPHeader.acceptedTypes],
+        headers: HTTPHeaders = [],
         timeout: Double = 20
     ) -> DataResult {
         guard
@@ -57,21 +58,29 @@ private extension URLRequest {
 private extension APIManager {
 
     func request(
-        urlRequest: URLRequest
+        urlRequest: URLRequest,
+        isImage: Bool = false
     ) -> DataResult {
-        var response: DataResult = .failure(APIError.cannotProcessData)
+        var result: DataResult = .failure(APIError.cannotProcessData)
 
         let semaphore = DispatchSemaphore(value: 0)
 
-        URLSession.shared.dataTask(with: urlRequest) { data, _, _ in
-            if let data = data {
-                response = .success(data)
+        URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
+            guard (response as? HTTPURLResponse)?.statusCode == 200,
+                let data = data
+            else { return }
+
+            if !isImage {
+                result = .success(data)
+            } else if let mimeType = response?.mimeType,
+                mimeType.hasPrefix("image") {
+                result = .success(data)
             }
             semaphore.signal()
         }.resume()
 
         semaphore.wait()
 
-        return response
+        return result
     }
 }

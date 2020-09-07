@@ -15,6 +15,7 @@ protocol APIManaging {
     /// - Returns: A DataResult that contains a Data object or an error
     func request(
         path: String,
+        isImage: Bool,
         method: HTTPMethod,
         headers: HTTPHeaders,
         timeout: Double
@@ -25,10 +26,11 @@ extension APIManaging {
 
     func request(
         path: String,
+        isImage: Bool = false,
         method: HTTPMethod = HTTPMethod.get,
-        headers: HTTPHeaders = [HTTPHeader.acceptedTypes],
+        headers: HTTPHeaders = [],
         timeout: Double = 20
     ) -> DataResult {
-        return request(path: path, method: method, headers: headers, timeout: timeout)
+        return request(path: path, isImage: isImage, method: method, headers: headers, timeout: timeout)
     }
 }

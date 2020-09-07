@@ -1,3 +1,3 @@
-public typealias Block = () -> Void
-public typealias Action<Parameter> = (Parameter) -> Void
-public typealias ButtonAction = Block
+typealias Block = () -> Void
+typealias Action<Parameter> = (Parameter) -> Void
+typealias ButtonAction = Block
