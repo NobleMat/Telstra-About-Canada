@@ -10,7 +10,7 @@
 		FFC443122505CB64004A04E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443112505CB64004A04E9 /* AppDelegate.swift */; };
 		FFC4431B2505CB65004A04E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC4431A2505CB65004A04E9 /* Assets.xcassets */; };
 		FFC4431E2505CB65004A04E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC4431C2505CB65004A04E9 /* LaunchScreen.storyboard */; };
-		FFC443292505CB66004A04E9 /* AboutCanadaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443282505CB66004A04E9 /* AboutCanadaTests.swift */; };
+		FFC443292505CB66004A04E9 /* AboutPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443282505CB66004A04E9 /* AboutPresenterTests.swift */; };
 		FFC443382505CD47004A04E9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443372505CD47004A04E9 /* UIColor+Extensions.swift */; };
 		FFC4433A2505CD56004A04E9 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443392505CD56004A04E9 /* UIFont+Extensions.swift */; };
 		FFC4433D2505CD69004A04E9 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4433C2505CD69004A04E9 /* Display.swift */; };
@@ -35,6 +35,8 @@
 		FFC443752505E97A004A04E9 /* UIRefreshControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443742505E97A004A04E9 /* UIRefreshControl+Extensions.swift */; };
 		FFC443772505EB84004A04E9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443762505EB84004A04E9 /* UIImageView+Extensions.swift */; };
 		FFC443792505FA70004A04E9 /* Optional+isNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443782505FA70004A04E9 /* Optional+isNil.swift */; };
+		FFC4437C2506233F004A04E9 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437B2506233F004A04E9 /* MockDisplay.swift */; };
+		FFC4437E250623CF004A04E9 /* About+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437D250623CF004A04E9 /* About+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +56,7 @@
 		FFC4431D2505CB65004A04E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFC4431F2505CB65004A04E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC443242505CB65004A04E9 /* AboutCanadaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AboutCanadaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFC443282505CB66004A04E9 /* AboutCanadaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCanadaTests.swift; sourceTree = "<group>"; };
+		FFC443282505CB66004A04E9 /* AboutPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterTests.swift; sourceTree = "<group>"; };
 		FFC4432A2505CB66004A04E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC443372505CD47004A04E9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		FFC443392505CD56004A04E9 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -80,6 +82,8 @@
 		FFC443742505E97A004A04E9 /* UIRefreshControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extensions.swift"; sourceTree = "<group>"; };
 		FFC443762505EB84004A04E9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		FFC443782505FA70004A04E9 /* Optional+isNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isNil.swift"; sourceTree = "<group>"; };
+		FFC4437B2506233F004A04E9 /* MockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDisplay.swift; sourceTree = "<group>"; };
+		FFC4437D250623CF004A04E9 /* About+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "About+Mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +138,8 @@
 		FFC443272505CB66004A04E9 /* AboutCanadaTests */ = {
 			isa = PBXGroup;
 			children = (
-				FFC443282505CB66004A04E9 /* AboutCanadaTests.swift */,
+				FFC4437A2506232A004A04E9 /* Mocks */,
+				FFC443282505CB66004A04E9 /* AboutPresenterTests.swift */,
 				FFC4432A2505CB66004A04E9 /* Info.plist */,
 			);
 			path = AboutCanadaTests;
@@ -248,6 +253,15 @@
 				FFC443612505D563004A04E9 /* AboutPresenter.swift */,
 			);
 			name = Presenter;
+			sourceTree = "<group>";
+		};
+		FFC4437A2506232A004A04E9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4437B2506233F004A04E9 /* MockDisplay.swift */,
+				FFC4437D250623CF004A04E9 /* About+Mock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC443292505CB66004A04E9 /* AboutCanadaTests.swift in Sources */,
+				FFC4437E250623CF004A04E9 /* About+Mock.swift in Sources */,
+				FFC4437C2506233F004A04E9 /* MockDisplay.swift in Sources */,
+				FFC443292505CB66004A04E9 /* AboutPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

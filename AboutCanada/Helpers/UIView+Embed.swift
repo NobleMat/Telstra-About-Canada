@@ -1,67 +1,27 @@
 import UIKit
-
 extension UIView {
 
-    struct Size {
-        struct Value {
-            let value: CGFloat
-            let priority: UILayoutPriority
+    /**
+     Add Constraints to the current view
 
-            init(value: CGFloat, priority: UILayoutPriority = UILayoutPriority.required) {
-                self.value = value
-                self.priority = priority
-            }
+     - parameter format: String to sprcify the Horizontal and Vertical constraints
+     - parameter views: Array of views that the format applies to
+     */
+    func addConstraintsWithFormat(format: String, views: UIView...) {
+        var viewsDictionary = [String: UIView]()
+        for (index, view) in views.enumerated() {
+            let key = "v\(index)"
+            view.translatesAutoresizingMaskIntoConstraints = false
+            viewsDictionary[key] = view
         }
 
-        let height: Value?
-        let width: Value?
-
-        init(height: Value? = nil, width: Value? = nil) {
-            self.height = height
-            self.width = width
-        }
-    }
-
-    func embed(
-        inView view: UIView,
-        insets: UIEdgeInsets = UIEdgeInsets.zero,
-        size: Size? = nil
-    ) {
-
-        translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(self)
-
-        let viewString = "view"
-        let viewDictionary: [String: Any] = [
-            viewString: self,
-        ]
-
-        var verticalConstraintString: String = "V:|-\(insets.top)-[\(viewString)]-\(insets.bottom)-|"
-        var horizontalConstraintString: String = "H:|-\(insets.left)-[\(viewString)]-\(insets.right)-|"
-
-        if let height = size?.height {
-            verticalConstraintString = "V:|-\(insets.top)-[\(viewString)(\(height.value))]-\(insets.bottom)@\(height.priority.rawValue)-|"
-        }
-
-        if let width = size?.width {
-            horizontalConstraintString = "H:|-\(insets.left)-[\(viewString)(\(width.value))]-\(insets.right)@\(width.priority.rawValue)-|"
-        }
-
-        var constraints: [NSLayoutConstraint] = []
-        let verticalConstraint = NSLayoutConstraint.constraints(
-            withVisualFormat: verticalConstraintString,
-            metrics: nil,
-            views: viewDictionary
+        addConstraints(
+            NSLayoutConstraint.constraints(
+                withVisualFormat: format,
+                options: [],
+                metrics: nil,
+                views: viewsDictionary
+            )
         )
-        constraints += verticalConstraint
-
-        let horizontalConstraint = NSLayoutConstraint.constraints(
-            withVisualFormat: horizontalConstraintString,
-            metrics: nil,
-            views: viewDictionary
-        )
-        constraints += horizontalConstraint
-
-        view.addConstraints(constraints)
     }
 }
