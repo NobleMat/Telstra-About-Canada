@@ -4,15 +4,15 @@ final class AboutCell: UITableViewCell, Reusable {
 
     private lazy var labelContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.clear
+        view.backgroundColor = .clear
         return view
     }()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = UIFont.semiBoldFont(with: 16.0)
+        label.lineBreakMode = .byWordWrapping
+        label.font = .semiBoldFont(with: 16.0)
         label.addAccessibility(using: .body)
         return label
     }()
@@ -20,15 +20,15 @@ final class AboutCell: UITableViewCell, Reusable {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = UIFont.regularFont(with: 14)
+        label.lineBreakMode = .byWordWrapping
+        label.font = .regularFont(with: 14)
         label.addAccessibility(using: .body)
         return label
     }()
 
     private lazy var imageContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.clear
+        view.backgroundColor = .clear
         return view
     }()
 
@@ -48,7 +48,7 @@ final class AboutCell: UITableViewCell, Reusable {
     }
 
     func configure(with item: AboutItem) {
-        contentView.backgroundColor = UIColor.cellBackground
+        contentView.backgroundColor = .cellBackground
         titleLabel.text = item.title
         descriptionLabel.text = item.description
         aboutImageView.downloaded(

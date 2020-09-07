@@ -59,14 +59,14 @@ private extension AboutPresenter {
             self.display.showLoading(show: false)
             switch result {
             case .success(let data):
-                self.setItems(using: data)
+                self.setRows(data)
             case .failure(let error):
-                self.setError(with: error)
+                self.setError(error)
             }
         }
     }
 
-    func setItems(using data: About) {
+    func setRows(_ data: About) {
         display.set(title: data.title)
         display.set(
             items: data.rows.filter {
@@ -77,7 +77,7 @@ private extension AboutPresenter {
         )
     }
 
-    func setError(with error: Error) {
+    func setError(_ error: Error) {
         display.set(title: Strings.about.title)
         display.set(
             items: [

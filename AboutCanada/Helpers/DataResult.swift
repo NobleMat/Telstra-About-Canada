@@ -63,12 +63,4 @@ extension DataResult {
         }
         return self
     }
-
-    private func customDataDecoder(decoder: Decoder) throws -> Data {
-        let container = try decoder.singleValueContainer()
-        let string = try container.decode(String.self)
-
-//        let jsonString = String(data: dataResponse, encoding: .ascii)
-        return string.data(using: .utf8) ?? Data()
-    }
 }

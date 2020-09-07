@@ -7,7 +7,7 @@ final class AboutViewController: UIViewController {
     // MARK: Private
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.frame, style: UITableView.Style.plain)
+        let tableView = UITableView(frame: self.view.frame, style: .plain)
         tableView.dataSource = self
         tableView.registerReusable(
             [
@@ -15,9 +15,8 @@ final class AboutViewController: UIViewController {
                 NoDataCell.self,
             ]
         )
-        tableView.backgroundColor = UIColor.clear
+        tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.tableFooterView = UIView()
         tableView.refreshControl = refreshControl
         tableView.allowsSelection = false
         return tableView
@@ -31,7 +30,7 @@ final class AboutViewController: UIViewController {
 
     private var refreshControl: UIRefreshControl {
         let refreshControl = UIRefreshControl.default
-        refreshControl.addTarget(self, action: Selector.refresh, for: UIControl.Event.valueChanged)
+        refreshControl.addTarget(self, action: Selector.refresh, for: .valueChanged)
         return refreshControl
     }
 
@@ -42,7 +41,7 @@ final class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.viewBackground
+        view.backgroundColor = .viewBackground
 
         setupViews()
 

@@ -13,10 +13,8 @@ extension UIViewController: LoadingDisplaying {
     func showLoading(show: Bool) {
         if show {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            ActivityIndicator.showActivityIndicator(view)
         } else {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            ActivityIndicator.hideActivityIndicator()
         }
     }
 }

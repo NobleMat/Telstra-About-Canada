@@ -4,8 +4,8 @@ protocol Localizable: RawRepresentable {
     var text: String { get }
     var title: String { get }
 
-    func text(withArguments arguments: CVarArg...) -> String
-    func title(withArguments arguments: CVarArg...) -> String
+    func text(with arguments: CVarArg...) -> String
+    func title(with arguments: CVarArg...) -> String
 
     func localize(_ key: String) -> String
 }
@@ -21,15 +21,15 @@ extension Localizable where RawValue == String {
     var text: String { return text() }
     var title: String { return title() }
 
-    func text(withArguments arguments: CVarArg...) -> String {
-        return localize(withSuffix: "", arguments: arguments)
+    func text(with arguments: CVarArg...) -> String {
+        return localize(with: "", arguments: arguments)
     }
 
-    func title(withArguments arguments: CVarArg...) -> String {
-        return localize(withSuffix: Strings.title, arguments: arguments)
+    func title(with arguments: CVarArg...) -> String {
+        return localize(with: Strings.title, arguments: arguments)
     }
 
-    private func localize(withSuffix suffix: String = "", arguments: [CVarArg]) -> String {
+    private func localize(with suffix: String = "", arguments: [CVarArg]) -> String {
         let key = rawValue.appending(suffix)
 
         if arguments.isEmpty {

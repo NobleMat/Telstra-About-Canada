@@ -5,9 +5,9 @@ final class NoDataCell: UITableViewCell, Reusable {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = UIFont.semiBoldFont(with: 16)
-        label.textAlignment = NSTextAlignment.center
+        label.lineBreakMode = .byWordWrapping
+        label.font = .semiBoldFont(with: 16)
+        label.textAlignment = .center
         label.addAccessibility(using: .body)
         return label
     }()
@@ -23,7 +23,7 @@ final class NoDataCell: UITableViewCell, Reusable {
     }
 
     func configure(with item: NoDataItem) {
-        contentView.backgroundColor = UIColor.cellBackground
+        contentView.backgroundColor = .cellBackground
         descriptionLabel.text = item.description
     }
 
