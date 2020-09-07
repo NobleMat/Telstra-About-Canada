@@ -2,6 +2,8 @@ import UIKit
 
 final class AboutCell: UITableViewCell, Reusable {
 
+    private lazy var contentStackView = makeStackView()
+
     private lazy var labelContentView = makeView()
 
     private lazy var titleLabel = makeLabel(with: .semiBoldFont(with: 16.0))
@@ -34,21 +36,14 @@ final class AboutCell: UITableViewCell, Reusable {
     }
 
     private func setupViews() {
-        [imageContentView, labelContentView].forEach {
-            contentView.addSubview($0)
-            contentView.addConstraintsWithFormat(
-                format: "V:|-8-[v0]->=8-|",
-                views: $0
-            )
-        }
+        contentView.addSubview(contentStackView)
         contentView.addConstraintsWithFormat(
-            format: "H:|-8-[v0]-8-[v1]-8-|",
-            views: imageContentView, labelContentView
+            format: "V:|-8-[v0]-8-|",
+            views: contentStackView
         )
-
         contentView.addConstraintsWithFormat(
-            format: "H:|-8@750-[v0]-8-|",
-            views: labelContentView
+            format: "H:|-16-[v0]-16-|",
+            views: contentStackView
         )
 
         [titleLabel, descriptionLabel].forEach {
@@ -70,7 +65,7 @@ final class AboutCell: UITableViewCell, Reusable {
             views: aboutImageView
         )
         imageContentView.addConstraintsWithFormat(
-            format: "V:|[v0(75)]|",
+            format: "V:|[v0(75)]->=0-|",
             views: aboutImageView
         )
     }
@@ -93,6 +88,16 @@ final class AboutCell: UITableViewCell, Reusable {
     private func makeImageView() -> UIImageView {
         let imageView = UIImageView()
         return imageView
+    }
+
+    private func makeStackView() -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: [imageContentView, labelContentView])
+        stackView.axis = NSLayoutConstraint.Axis.horizontal
+        stackView.alignment = UIStackView.Alignment.fill
+        stackView.distribution = UIStackView.Distribution.fill
+        stackView.spacing = 8.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }
 }
 
