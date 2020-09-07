@@ -6,8 +6,8 @@
 //  Copyright © 2020 Mathew, Noble. All rights reserved.
 //
 
-import XCTest
 @testable import AboutCanada
+import XCTest
 
 class AboutCanadaTests: XCTestCase {
 
@@ -26,9 +26,8 @@ class AboutCanadaTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

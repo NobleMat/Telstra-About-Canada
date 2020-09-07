@@ -11,6 +11,21 @@
 		FFC4431B2505CB65004A04E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC4431A2505CB65004A04E9 /* Assets.xcassets */; };
 		FFC4431E2505CB65004A04E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC4431C2505CB65004A04E9 /* LaunchScreen.storyboard */; };
 		FFC443292505CB66004A04E9 /* AboutCanadaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443282505CB66004A04E9 /* AboutCanadaTests.swift */; };
+		FFC443382505CD47004A04E9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443372505CD47004A04E9 /* UIColor+Extensions.swift */; };
+		FFC4433A2505CD56004A04E9 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443392505CD56004A04E9 /* UIFont+Extensions.swift */; };
+		FFC4433D2505CD69004A04E9 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4433C2505CD69004A04E9 /* Display.swift */; };
+		FFC4433F2505CD92004A04E9 /* TitleDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4433E2505CD92004A04E9 /* TitleDisplaying.swift */; };
+		FFC443412505CDD5004A04E9 /* LoadingDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443402505CDD5004A04E9 /* LoadingDisplaying.swift */; };
+		FFC443442505CE82004A04E9 /* CellDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443432505CE82004A04E9 /* CellDisplayable.swift */; };
+		FFC443462505CE9C004A04E9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443452505CE9C004A04E9 /* Actions.swift */; };
+		FFC443482505CEC6004A04E9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443472505CEC6004A04E9 /* Reusable.swift */; };
+		FFC4434C2505CF08004A04E9 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */; };
+		FFC4434E2505CF3D004A04E9 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4434D2505CF3D004A04E9 /* TableViewSection.swift */; };
+		FFC443532505D2BA004A04E9 /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443522505D2BA004A04E9 /* APIManaging.swift */; };
+		FFC443552505D2F7004A04E9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443542505D2F7004A04E9 /* HTTPMethod.swift */; };
+		FFC443572505D30B004A04E9 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443562505D30B004A04E9 /* HTTPHeader.swift */; };
+		FFC443592505D34E004A04E9 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443582505D34E004A04E9 /* DataResult.swift */; };
+		FFC4435B2505D3CD004A04E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4435A2505D3CD004A04E9 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +47,21 @@
 		FFC443242505CB65004A04E9 /* AboutCanadaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AboutCanadaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC443282505CB66004A04E9 /* AboutCanadaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCanadaTests.swift; sourceTree = "<group>"; };
 		FFC4432A2505CB66004A04E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFC443372505CD47004A04E9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FFC443392505CD56004A04E9 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		FFC4433C2505CD69004A04E9 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		FFC4433E2505CD92004A04E9 /* TitleDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDisplaying.swift; sourceTree = "<group>"; };
+		FFC443402505CDD5004A04E9 /* LoadingDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDisplaying.swift; sourceTree = "<group>"; };
+		FFC443432505CE82004A04E9 /* CellDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDisplayable.swift; sourceTree = "<group>"; };
+		FFC443452505CE9C004A04E9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		FFC443472505CEC6004A04E9 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
+		FFC4434D2505CF3D004A04E9 /* TableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
+		FFC443522505D2BA004A04E9 /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
+		FFC443542505D2F7004A04E9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		FFC443562505D30B004A04E9 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		FFC443582505D34E004A04E9 /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
+		FFC4435A2505D3CD004A04E9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +103,7 @@
 		FFC443102505CB64004A04E9 /* AboutCanada */ = {
 			isa = PBXGroup;
 			children = (
+				FFC443352505CD13004A04E9 /* Helpers */,
 				FFC443112505CB64004A04E9 /* AppDelegate.swift */,
 				FFC4431A2505CB65004A04E9 /* Assets.xcassets */,
 				FFC4431C2505CB65004A04E9 /* LaunchScreen.storyboard */,
@@ -88,6 +119,60 @@
 				FFC4432A2505CB66004A04E9 /* Info.plist */,
 			);
 			path = AboutCanadaTests;
+			sourceTree = "<group>";
+		};
+		FFC443352505CD13004A04E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFC443452505CE9C004A04E9 /* Actions.swift */,
+				FFC4434D2505CF3D004A04E9 /* TableViewSection.swift */,
+				FFC4433B2505CD60004A04E9 /* Display */,
+				FFC443512505D29B004A04E9 /* Networking */,
+				FFC443422505CE72004A04E9 /* Protocols */,
+				FFC443362505CD28004A04E9 /* UIKit */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FFC443362505CD28004A04E9 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FFC443372505CD47004A04E9 /* UIColor+Extensions.swift */,
+				FFC443392505CD56004A04E9 /* UIFont+Extensions.swift */,
+				FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		FFC4433B2505CD60004A04E9 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4433C2505CD69004A04E9 /* Display.swift */,
+				FFC443402505CDD5004A04E9 /* LoadingDisplaying.swift */,
+				FFC4433E2505CD92004A04E9 /* TitleDisplaying.swift */,
+			);
+			name = Display;
+			sourceTree = "<group>";
+		};
+		FFC443422505CE72004A04E9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FFC443432505CE82004A04E9 /* CellDisplayable.swift */,
+				FFC443472505CEC6004A04E9 /* Reusable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		FFC443512505D29B004A04E9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4435A2505D3CD004A04E9 /* API.swift */,
+				FFC443522505D2BA004A04E9 /* APIManaging.swift */,
+				FFC443582505D34E004A04E9 /* DataResult.swift */,
+				FFC443562505D30B004A04E9 /* HTTPHeader.swift */,
+				FFC443542505D2F7004A04E9 /* HTTPMethod.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +316,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC443442505CE82004A04E9 /* CellDisplayable.swift in Sources */,
+				FFC443462505CE9C004A04E9 /* Actions.swift in Sources */,
+				FFC443552505D2F7004A04E9 /* HTTPMethod.swift in Sources */,
+				FFC443592505D34E004A04E9 /* DataResult.swift in Sources */,
+				FFC4433F2505CD92004A04E9 /* TitleDisplaying.swift in Sources */,
+				FFC443482505CEC6004A04E9 /* Reusable.swift in Sources */,
 				FFC443122505CB64004A04E9 /* AppDelegate.swift in Sources */,
+				FFC4433A2505CD56004A04E9 /* UIFont+Extensions.swift in Sources */,
+				FFC4433D2505CD69004A04E9 /* Display.swift in Sources */,
+				FFC443412505CDD5004A04E9 /* LoadingDisplaying.swift in Sources */,
+				FFC443532505D2BA004A04E9 /* APIManaging.swift in Sources */,
+				FFC4434E2505CF3D004A04E9 /* TableViewSection.swift in Sources */,
+				FFC443382505CD47004A04E9 /* UIColor+Extensions.swift in Sources */,
+				FFC443572505D30B004A04E9 /* HTTPHeader.swift in Sources */,
+				FFC4435B2505D3CD004A04E9 /* API.swift in Sources */,
+				FFC4434C2505CF08004A04E9 /* UIView+Embed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
