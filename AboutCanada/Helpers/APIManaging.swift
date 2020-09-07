@@ -25,7 +25,7 @@ extension APIManaging {
     func request(
         path: String,
         isImage: Bool = false,
-        method: HTTPMethod = HTTPMethod.get,
+        method: HTTPMethod = .get,
         timeout: Double = 20
     ) -> DataResult {
         return request(path: path, isImage: isImage, method: method, timeout: timeout)

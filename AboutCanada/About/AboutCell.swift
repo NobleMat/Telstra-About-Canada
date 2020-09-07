@@ -2,40 +2,15 @@ import UIKit
 
 final class AboutCell: UITableViewCell, Reusable {
 
-    private lazy var labelContentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
+    private lazy var labelContentView = makeView()
 
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.font = .semiBoldFont(with: 16.0)
-        label.addAccessibility(using: .body)
-        return label
-    }()
+    private lazy var titleLabel = makeLabel(with: .semiBoldFont(with: 16.0))
 
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.font = .regularFont(with: 14)
-        label.addAccessibility(using: .body)
-        return label
-    }()
+    private lazy var descriptionLabel = makeLabel(with: .regularFont(with: 14))
 
-    private lazy var imageContentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
+    private lazy var imageContentView = makeView()
 
-    private lazy var aboutImageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
+    private lazy var aboutImageView = makeImageView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -98,6 +73,26 @@ final class AboutCell: UITableViewCell, Reusable {
             format: "V:|[v0(75)]|",
             views: aboutImageView
         )
+    }
+
+    private func makeView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }
+
+    private func makeLabel(with font: UIFont) -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.font = font
+        label.addAccessibility(using: .body)
+        return label
+    }
+
+    private func makeImageView() -> UIImageView {
+        let imageView = UIImageView()
+        return imageView
     }
 }
 

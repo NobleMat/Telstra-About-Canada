@@ -2,15 +2,7 @@ import UIKit
 
 final class NoDataCell: UITableViewCell, Reusable {
 
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.font = .semiBoldFont(with: 16)
-        label.textAlignment = .center
-        label.addAccessibility(using: .body)
-        return label
-    }()
+    private lazy var descriptionLabel = makeLabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,6 +31,16 @@ final class NoDataCell: UITableViewCell, Reusable {
             format: "H:|-16-[v0]-16-|",
             views: descriptionLabel
         )
+    }
+    
+    private func makeLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.font = .semiBoldFont(with: 16)
+        label.textAlignment = .center
+        label.addAccessibility(using: .body)
+        return label
     }
 }
 

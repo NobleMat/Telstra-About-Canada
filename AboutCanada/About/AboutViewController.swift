@@ -30,7 +30,7 @@ final class AboutViewController: UIViewController {
 
     private var refreshControl: UIRefreshControl {
         let refreshControl = UIRefreshControl.default
-        refreshControl.addTarget(self, action: Selector.refresh, for: .valueChanged)
+        refreshControl.addTarget(self, action: .refresh, for: .valueChanged)
         return refreshControl
     }
 

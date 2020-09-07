@@ -15,8 +15,8 @@ extension DataResult {
     @discardableResult
     func responseDecodable<Response: Decodable>(
         of type: Response.Type = Response.self,
-        queue: DispatchQueue = DispatchQueue.main,
-        decoder: JSONDecoder = JSONDecoder(),
+        queue: DispatchQueue = .main,
+        decoder: JSONDecoder = .init(),
         completion: @escaping (DecodableResult<Response>) -> Void
     ) -> Self {
         guard case .success(let dataResponse) = self,
@@ -49,7 +49,7 @@ extension DataResult {
     /// - Returns: self since this is discardable
     @discardableResult
     func response(
-        queue: DispatchQueue = DispatchQueue.main,
+        queue: DispatchQueue = .main,
         completion: @escaping (DataResult) -> Void
     ) -> Self {
         guard case .success(let response) = self else {
