@@ -48,6 +48,7 @@ final class AboutCell: UITableViewCell, Reusable {
     }
 
     func configure(with item: AboutItem) {
+        contentView.backgroundColor = UIColor.cellBackground
         titleLabel.text = item.title
         descriptionLabel.text = item.description
         aboutImageView.downloaded(

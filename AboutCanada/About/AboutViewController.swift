@@ -12,6 +12,7 @@ final class AboutViewController: UIViewController {
         tableView.registerReusable(
             [
                 AboutCell.self,
+                NoDataCell.self,
             ]
         )
         tableView.backgroundColor = UIColor.clear
@@ -34,9 +35,7 @@ final class AboutViewController: UIViewController {
         return refreshControl
     }
 
-    // MARK: Public
-
-    var presenter: AboutPresenting!
+    private var presenter: AboutPresenting!
 
     // MARK: - Lifecycle
 

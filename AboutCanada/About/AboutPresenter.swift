@@ -49,6 +49,7 @@ private extension AboutPresenter {
 
     enum Strings: String, Localizable {
         case about
+        case error = "about.error"
     }
 
     func fetchData() {
@@ -78,6 +79,10 @@ private extension AboutPresenter {
 
     func setError(with error: Error) {
         display.set(title: Strings.about.title)
-        display.set(items: [])
+        display.set(
+            items: [
+                NoDataItem(description: Strings.error.text),
+            ]
+        )
     }
 }

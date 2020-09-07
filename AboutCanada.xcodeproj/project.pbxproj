@@ -22,7 +22,6 @@
 		FFC4434C2505CF08004A04E9 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */; };
 		FFC443532505D2BA004A04E9 /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443522505D2BA004A04E9 /* APIManaging.swift */; };
 		FFC443552505D2F7004A04E9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443542505D2F7004A04E9 /* HTTPMethod.swift */; };
-		FFC443572505D30B004A04E9 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443562505D30B004A04E9 /* HTTPHeader.swift */; };
 		FFC443592505D34E004A04E9 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443582505D34E004A04E9 /* DataResult.swift */; };
 		FFC4435B2505D3CD004A04E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4435A2505D3CD004A04E9 /* API.swift */; };
 		FFC443632505D563004A04E9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4435F2505D563004A04E9 /* AboutViewController.swift */; };
@@ -38,6 +37,7 @@
 		FFC4437C2506233F004A04E9 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437B2506233F004A04E9 /* MockDisplay.swift */; };
 		FFC4437E250623CF004A04E9 /* About+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437D250623CF004A04E9 /* About+Mock.swift */; };
 		FFC4438025062CBD004A04E9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437F25062CBD004A04E9 /* ActivityIndicator.swift */; };
+		FFC4438325062FA9004A04E9 /* NoDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4438225062FA9004A04E9 /* NoDataCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,6 @@
 		FFC4434B2505CF08004A04E9 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
 		FFC443522505D2BA004A04E9 /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
 		FFC443542505D2F7004A04E9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		FFC443562505D30B004A04E9 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		FFC443582505D34E004A04E9 /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
 		FFC4435A2505D3CD004A04E9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FFC4435F2505D563004A04E9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		FFC4437B2506233F004A04E9 /* MockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDisplay.swift; sourceTree = "<group>"; };
 		FFC4437D250623CF004A04E9 /* About+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "About+Mock.swift"; sourceTree = "<group>"; };
 		FFC4437F25062CBD004A04E9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		FFC4438225062FA9004A04E9 /* NoDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +132,7 @@
 				FFC4435C2505D54A004A04E9 /* About */,
 				FFC443352505CD13004A04E9 /* Helpers */,
 				FFC4431C2505CB65004A04E9 /* LaunchScreen.storyboard */,
+				FFC4438125062F97004A04E9 /* NoData */,
 				FFC4436A2505D63C004A04E9 /* Resources */,
 			);
 			path = AboutCanada;
@@ -199,7 +200,6 @@
 				FFC4435A2505D3CD004A04E9 /* API.swift */,
 				FFC443522505D2BA004A04E9 /* APIManaging.swift */,
 				FFC443582505D34E004A04E9 /* DataResult.swift */,
-				FFC443562505D30B004A04E9 /* HTTPHeader.swift */,
 				FFC443542505D2F7004A04E9 /* HTTPMethod.swift */,
 			);
 			name = Networking;
@@ -265,6 +265,14 @@
 				FFC4437D250623CF004A04E9 /* About+Mock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		FFC4438125062F97004A04E9 /* NoData */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4438225062FA9004A04E9 /* NoDataCell.swift */,
+			);
+			path = NoData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +428,7 @@
 				FFC443772505EB84004A04E9 /* UIImageView+Extensions.swift in Sources */,
 				FFC443482505CEC6004A04E9 /* Reusable.swift in Sources */,
 				FFC443122505CB64004A04E9 /* AppDelegate.swift in Sources */,
+				FFC4438325062FA9004A04E9 /* NoDataCell.swift in Sources */,
 				FFC4433A2505CD56004A04E9 /* UIFont+Extensions.swift in Sources */,
 				FFC443652505D563004A04E9 /* AboutPresenter.swift in Sources */,
 				FFC4433D2505CD69004A04E9 /* Display.swift in Sources */,
@@ -429,7 +438,6 @@
 				FFC443532505D2BA004A04E9 /* APIManaging.swift in Sources */,
 				FFC443382505CD47004A04E9 /* UIColor+Extensions.swift in Sources */,
 				FFC443712505DA45004A04E9 /* About.swift in Sources */,
-				FFC443572505D30B004A04E9 /* HTTPHeader.swift in Sources */,
 				FFC4436F2505D9C1004A04E9 /* AboutCell.swift in Sources */,
 				FFC4435B2505D3CD004A04E9 /* API.swift in Sources */,
 				FFC4434C2505CF08004A04E9 /* UIView+Embed.swift in Sources */,

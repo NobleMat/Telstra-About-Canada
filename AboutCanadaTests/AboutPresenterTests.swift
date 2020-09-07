@@ -31,7 +31,7 @@ class AboutPresenterTests: XCTestCase {
         XCTAssertEqual(mockDisplay.setTitle, "title")
     }
 
-    func testItems_apiFailure() {
+    func testItems_apiFailure() throws {
         // Given
 
         // When
@@ -40,9 +40,12 @@ class AboutPresenterTests: XCTestCase {
 
         // Then
         XCTAssertEqual(mockDisplay.setItemsCalledCount, 1)
-        XCTAssertEqual(mockDisplay.setItems?.count, 0)
+        XCTAssertEqual(mockDisplay.setItems?.count, 1)
         XCTAssertEqual(mockDisplay.setTitleCalledCount, 2)
         XCTAssertEqual(mockDisplay.setTitle, "About")
+
+        let item = try XCTUnwrap(mockDisplay.setItems?.first as? NoDataItem)
+        XCTAssertEqual(item.description, NSLocalizedString("about.error", comment: "No Data description"))
     }
 
     func testItems_apiSuccess() throws {
