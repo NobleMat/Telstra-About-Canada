@@ -3,6 +3,13 @@ import UIKit
 let imageCache = NSCache<NSString, UIImage>()
 extension UIImageView {
 
+    /// Download the image using the path given and apply it to the imageView, Then cache a copy of the image locally.
+    ///
+    /// - Parameters:
+    ///   - path: The link to the image
+    ///   - contentMode: The content mode of the imageView, defaults to ScaleAspectFit
+    ///   - queue: The queue used to set the image, defaults to the main Queue
+    ///   - completion: A completion block that specifies if the image was downloaded successfully
     func downloaded(
         from path: String?,
         contentMode: UIView.ContentMode = .scaleAspectFit,

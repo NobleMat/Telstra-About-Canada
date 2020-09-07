@@ -41,35 +41,9 @@ extension UILabel {
     /// - Parameters:
     ///   - textStyle: TextStyle of the font to be used. This can be used to restrict the maximum font size
     ///   - isAttributed: If the label uses an attributed String
-    func addAccessibility(using textStyle: UIFont.TextStyle, isAttributed: Bool = false) {
-        if isAttributed {
-            attributedText = attributedText?.resized(using: textStyle)
-        } else {
-            font = font.scaledFont(using: textStyle, size: font.pointSize)
-            adjustsFontForContentSizeCategory = true
-        }
-    }
-}
-
-extension NSAttributedString {
-    /// Resizes the attributedString based on the textStyle and calculated maximum size
-    /// - Parameter textStyle: TextStyle of the font to be used. This can be used to restrict the maximum font size
-    /// - Returns: The resized attributed string
-    func resized(using textStyle: UIFont.TextStyle) -> NSAttributedString {
-        guard let resizedString: NSMutableAttributedString = mutableCopy() as? NSMutableAttributedString else { return self }
-        resizedString.beginEditing()
-        enumerateAttributes(
-            in: NSRange(location: 0, length: resizedString.length),
-            options: []
-        ) { originalAttributes, range, _ in
-            var resizedAttributes = originalAttributes
-            guard let originalFont = resizedAttributes[.font] as? UIFont else { return }
-            let newFont = originalFont.scaledFont(using: textStyle, size: originalFont.pointSize)
-            resizedAttributes[.font] = newFont
-            resizedString.setAttributes(resizedAttributes, range: range)
-        }
-        resizedString.endEditing()
-        return resizedString
+    func addAccessibility(using textStyle: UIFont.TextStyle) {
+        font = font.scaledFont(using: textStyle, size: font.pointSize)
+        adjustsFontForContentSizeCategory = true
     }
 }
 

@@ -60,20 +60,33 @@ final class AboutCell: UITableViewCell, Reusable {
     private func setupViews() {
         [imageContentView, labelContentView].forEach {
             contentView.addSubview($0)
-            contentView.addConstraintsWithFormat(format: "V:|-8-[v0]->=8-|", views: $0)
+            contentView.addConstraintsWithFormat(
+                format: "V:|-8-[v0]->=8-|",
+                views: $0
+            )
         }
         contentView.addConstraintsWithFormat(
             format: "H:|-8-[v0]-8-[v1]-8-|",
             views: imageContentView, labelContentView
         )
-        contentView.addConstraintsWithFormat(format: "H:|-8@750-[v0]-8-|", views: labelContentView)
+
+        contentView.addConstraintsWithFormat(
+            format: "H:|-8@750-[v0]-8-|",
+            views: labelContentView
+        )
 
         [titleLabel, descriptionLabel].forEach {
             labelContentView.addSubview($0)
-            labelContentView.addConstraintsWithFormat(format: "H:|[v0]|", views: $0)
+            labelContentView.addConstraintsWithFormat(
+                format: "H:|[v0]|",
+                views: $0
+            )
         }
 
-        labelContentView.addConstraintsWithFormat(format: "V:|[v0]-8-[v1]->=0-|", views: titleLabel, descriptionLabel)
+        labelContentView.addConstraintsWithFormat(
+            format: "V:|[v0]-8-[v1]->=0-|",
+            views: titleLabel, descriptionLabel
+        )
 
         imageContentView.addSubview(aboutImageView)
         imageContentView.addConstraintsWithFormat(

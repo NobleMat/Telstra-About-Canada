@@ -52,8 +52,10 @@ private extension AboutPresenter {
     }
 
     func fetchData() {
+        display.showLoading(show: true)
         manager.fetchData { [weak self] result in
             guard let self = self else { return }
+            self.display.showLoading(show: false)
             switch result {
             case .success(let data):
                 self.setItems(using: data)

@@ -37,6 +37,7 @@
 		FFC443792505FA70004A04E9 /* Optional+isNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC443782505FA70004A04E9 /* Optional+isNil.swift */; };
 		FFC4437C2506233F004A04E9 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437B2506233F004A04E9 /* MockDisplay.swift */; };
 		FFC4437E250623CF004A04E9 /* About+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437D250623CF004A04E9 /* About+Mock.swift */; };
+		FFC4438025062CBD004A04E9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4437F25062CBD004A04E9 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FFC443782505FA70004A04E9 /* Optional+isNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isNil.swift"; sourceTree = "<group>"; };
 		FFC4437B2506233F004A04E9 /* MockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDisplay.swift; sourceTree = "<group>"; };
 		FFC4437D250623CF004A04E9 /* About+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "About+Mock.swift"; sourceTree = "<group>"; };
+		FFC4437F25062CBD004A04E9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		FFC443362505CD28004A04E9 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				FFC4437F25062CBD004A04E9 /* ActivityIndicator.swift */,
 				FFC443372505CD47004A04E9 /* UIColor+Extensions.swift */,
 				FFC443392505CD56004A04E9 /* UIFont+Extensions.swift */,
 				FFC443762505EB84004A04E9 /* UIImageView+Extensions.swift */,
@@ -422,6 +425,7 @@
 				FFC4433D2505CD69004A04E9 /* Display.swift in Sources */,
 				FFC443632505D563004A04E9 /* AboutViewController.swift in Sources */,
 				FFC443412505CDD5004A04E9 /* LoadingDisplaying.swift in Sources */,
+				FFC4438025062CBD004A04E9 /* ActivityIndicator.swift in Sources */,
 				FFC443532505D2BA004A04E9 /* APIManaging.swift in Sources */,
 				FFC443382505CD47004A04E9 /* UIColor+Extensions.swift in Sources */,
 				FFC443712505DA45004A04E9 /* About.swift in Sources */,

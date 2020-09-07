@@ -1,12 +1,10 @@
 import UIKit
 extension UIView {
 
-    /**
-     Add Constraints to the current view
-
-     - parameter format: String to sprcify the Horizontal and Vertical constraints
-     - parameter views: Array of views that the format applies to
-     */
+    /// Add Constraints to the current view
+    /// - Parameters:
+    ///   - format: String to specify the Horizontal and Vertical constraints
+    ///   - views: Array of views that the format applies to
     func addConstraintsWithFormat(format: String, views: UIView...) {
         var viewsDictionary = [String: UIView]()
         for (index, view) in views.enumerated() {
