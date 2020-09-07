@@ -6,12 +6,19 @@ final class AboutViewController: UIViewController {
 
     // MARK: Private
 
-    private var tableView: UITableView {
-        let tableview = UITableView()
-        tableview.dataSource = self
-        tableview.registerReusable([AboutCell.self])
-        return tableview
-    }
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: self.view.frame, style: UITableView.Style.plain)
+        tableView.dataSource = self
+        tableView.registerReusable(
+            [
+                AboutCell.self,
+            ]
+        )
+        tableView.backgroundColor = UIColor.clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.tableFooterView = UIView()
+        return tableView
+    }()
 
     private var items: TableViewItems = [] {
         didSet {
@@ -28,7 +35,7 @@ final class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(tableView)
+        view.backgroundColor = UIColor.viewBackground
 
         presenter = AboutPresenter(display: self)
 
@@ -67,9 +74,10 @@ extension AboutViewController: UITableViewDataSource {
 private extension AboutViewController {
 
     func setupViews() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
 
-        let tableViewString = "tableView"
+        view.addSubview(tableView)
+
+        let tableViewString = "tableview"
         let views: [String: Any] = [
             tableViewString: tableView,
         ]
@@ -77,19 +85,21 @@ private extension AboutViewController {
         var constraints: [NSLayoutConstraint] = []
 
         let verticalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-[\(tableViewString)]-|",
+            withVisualFormat: "V:|[\(tableViewString)]|",
+            options: [],
             metrics: nil,
             views: views
         )
         constraints += verticalConstraints
 
         let horizontalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-\(tableViewString)-|",
+            withVisualFormat: "H:|[\(tableViewString)]|",
+            options: [],
             metrics: nil,
             views: views
         )
         constraints += horizontalConstraints
 
-        NSLayoutConstraint.activate(constraints)
+        view.addConstraints(constraints)
     }
 }
