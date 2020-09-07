@@ -38,11 +38,11 @@ extension APIManager: APIManaging {
     }
 }
 
-// MARK: - Helpers
+// MARK: - Private Helpers
 
 // MARK: URLRequest
 
-extension URLRequest {
+private extension URLRequest {
 
     static func request(using url: URL, timeoutInterval: Double) -> URLRequest {
         return URLRequest(
@@ -54,7 +54,7 @@ extension URLRequest {
 
 // MARK: Fetch data
 
-extension APIManager {
+private extension APIManager {
 
     func request(
         urlRequest: URLRequest

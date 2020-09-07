@@ -1,5 +1,7 @@
 import UIKit
 
+typealias TableViewItems = [CellDisplayable]
+
 protocol CellDisplayable {
 
     var action: ButtonAction? { get }
