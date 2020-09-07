@@ -85,8 +85,10 @@ extension AboutViewController: UITableViewDataSource {
 private extension AboutViewController {
 
     func setupViews() {
+        view.addSubview(tableView)
 
-        tableView.embed(inView: view)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: tableView)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", views: tableView)
     }
 
     @objc

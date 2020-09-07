@@ -2,28 +2,16 @@ import UIKit
 
 final class AboutCell: UITableViewCell, Reusable {
 
-    private lazy var contentStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [imageContentView, labelStackView])
-        stackView.axis = NSLayoutConstraint.Axis.horizontal
-        stackView.alignment = UIStackView.Alignment.fill
-        stackView.distribution = UIStackView.Distribution.fill
-        stackView.spacing = 8.0
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-
-    private lazy var labelStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
-        stackView.axis = NSLayoutConstraint.Axis.vertical
-        stackView.alignment = UIStackView.Alignment.fill
-        stackView.distribution = UIStackView.Distribution.fill
-        stackView.spacing = 8.0
-        return stackView
+    private lazy var labelContentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
     }()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.font = UIFont.semiBoldFont(with: 16.0)
         label.addAccessibility(using: .body)
         return label
@@ -32,6 +20,7 @@ final class AboutCell: UITableViewCell, Reusable {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.font = UIFont.regularFont(with: 14)
         label.addAccessibility(using: .body)
         return label
@@ -39,13 +28,12 @@ final class AboutCell: UITableViewCell, Reusable {
 
     private lazy var imageContentView: UIView = {
         let view = UIView()
+        view.backgroundColor = UIColor.clear
         return view
     }()
 
     private lazy var aboutImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .yellow
         return imageView
     }()
 
@@ -62,25 +50,39 @@ final class AboutCell: UITableViewCell, Reusable {
     func configure(with item: AboutItem) {
         titleLabel.text = item.title
         descriptionLabel.text = item.description
-//        aboutImageView.downloaded(
-//            from: item.imageURL
-//        ) { success in
-//            self.aboutImageView.isHidden = !success
-//        }
+        aboutImageView.downloaded(
+            from: item.imageURL
+        ) { success in
+            self.imageContentView.isHidden = !success
+        }
     }
 
     private func setupViews() {
-        contentStackView.embed(inView: contentView, insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+        [imageContentView, labelContentView].forEach {
+            contentView.addSubview($0)
+            contentView.addConstraintsWithFormat(format: "V:|-8-[v0]->=8-|", views: $0)
+        }
+        contentView.addConstraintsWithFormat(
+            format: "H:|-8-[v0]-8-[v1]-8-|",
+            views: imageContentView, labelContentView
+        )
+        contentView.addConstraintsWithFormat(format: "H:|-8@750-[v0]-8-|", views: labelContentView)
 
-        aboutImageView.embed(
-            inView: imageContentView,
-            size: UIView.Size(
-                height: UIView.Size.Value(
-                    value: 50,
-                    priority: UILayoutPriority.defaultLow
-                ),
-                width: UIView.Size.Value(value: 50)
-            )
+        [titleLabel, descriptionLabel].forEach {
+            labelContentView.addSubview($0)
+            labelContentView.addConstraintsWithFormat(format: "H:|[v0]|", views: $0)
+        }
+
+        labelContentView.addConstraintsWithFormat(format: "V:|[v0]-8-[v1]->=0-|", views: titleLabel, descriptionLabel)
+
+        imageContentView.addSubview(aboutImageView)
+        imageContentView.addConstraintsWithFormat(
+            format: "H:|[v0(75)]|",
+            views: aboutImageView
+        )
+        imageContentView.addConstraintsWithFormat(
+            format: "V:|[v0(75)]|",
+            views: aboutImageView
         )
     }
 }

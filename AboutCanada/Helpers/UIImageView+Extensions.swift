@@ -19,20 +19,23 @@ extension UIImageView {
             completion?(true)
         } else {
 
-            API.request(path: path, isImage: true).response { result in
-                switch result {
-                case .success(let data):
-                    guard let image = UIImage(data: data) else {
+            DispatchQueue.global(qos: .utility).async {
+
+                API.request(path: path, isImage: true).response { result in
+                    switch result {
+                    case .success(let data):
+                        guard let image = UIImage(data: data) else {
+                            completion?(false)
+                            return
+                        }
+                        queue.async {
+                            imageCache.setObject(image, forKey: path as NSString)
+                            self.image = image
+                            completion?(true)
+                        }
+                    case .failure:
                         completion?(false)
-                        return
                     }
-                    queue.async {
-                        imageCache.setObject(image, forKey: path as NSString)
-                        self.image = image
-                        completion?(true)
-                    }
-                case .failure:
-                    completion?(false)
                 }
             }
         }
