@@ -2,47 +2,66 @@ import UIKit
 
 extension UIView {
 
-    struct Embed {
+    struct Size {
+        struct Value {
+            let value: CGFloat
+            let priority: UILayoutPriority
 
-        enum Edge {
-            case top
-            case left
-            case bottom
-            case right
+            init(value: CGFloat, priority: UILayoutPriority = UILayoutPriority.required) {
+                self.value = value
+                self.priority = priority
+            }
         }
 
-        let layoutGuide: UILayoutGuide
-        let edges: [Edge]
+        let height: Value?
+        let width: Value?
+
+        init(height: Value? = nil, width: Value? = nil) {
+            self.height = height
+            self.width = width
+        }
     }
 
-    func embed(inView view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero, options: Embed? = nil) {
+    func embed(
+        inView view: UIView,
+        insets: UIEdgeInsets = UIEdgeInsets.zero,
+        size: Size? = nil
+    ) {
 
         translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(self)
 
-        var topConstraint: NSLayoutConstraint = topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top)
-        var leftConstraint: NSLayoutConstraint = leftAnchor.constraint(equalTo: view.leftAnchor, constant: insets.left)
-        var bottomConstraint: NSLayoutConstraint = view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom)
-        var rightConstraint: NSLayoutConstraint = view.rightAnchor.constraint(equalTo: rightAnchor, constant: insets.right)
+        let viewString = "view"
+        let viewDictionary: [String: Any] = [
+            viewString: self,
+        ]
 
-        if let options = options {
-            options.edges.forEach { edge in
-                switch edge {
-                case .top: topConstraint = self.topAnchor.constraint(equalTo: options.layoutGuide.topAnchor, constant: insets.top)
-                case .left: leftConstraint = self.leftAnchor.constraint(equalTo: options.layoutGuide.leftAnchor, constant: insets.left)
-                case .bottom: bottomConstraint = options.layoutGuide.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: insets.bottom)
-                case .right: rightConstraint = options.layoutGuide.rightAnchor.constraint(equalTo: self.rightAnchor, constant: insets.right)
-                }
-            }
+        var verticalConstraintString: String = "V:|-\(insets.top)-[\(viewString)]-\(insets.bottom)-|"
+        var horizontalConstraintString: String = "H:|-\(insets.left)-[\(viewString)]-\(insets.right)-|"
+
+        if let height = size?.height {
+            verticalConstraintString = "V:|-\(insets.top)-[\(viewString)(\(height.value))]-\(insets.bottom)@\(height.priority.rawValue)-|"
         }
 
-        NSLayoutConstraint.activate(
-            [
-                topConstraint,
-                leftConstraint,
-                bottomConstraint,
-                rightConstraint,
-            ]
+        if let width = size?.width {
+            horizontalConstraintString = "H:|-\(insets.left)-[\(viewString)(\(width.value))]-\(insets.right)@\(width.priority.rawValue)-|"
+        }
+
+        var constraints: [NSLayoutConstraint] = []
+        let verticalConstraint = NSLayoutConstraint.constraints(
+            withVisualFormat: verticalConstraintString,
+            metrics: nil,
+            views: viewDictionary
         )
+        constraints += verticalConstraint
+
+        let horizontalConstraint = NSLayoutConstraint.constraints(
+            withVisualFormat: horizontalConstraintString,
+            metrics: nil,
+            views: viewDictionary
+        )
+        constraints += horizontalConstraint
+
+        view.addConstraints(constraints)
     }
 }

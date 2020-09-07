@@ -86,32 +86,7 @@ private extension AboutViewController {
 
     func setupViews() {
 
-        view.addSubview(tableView)
-
-        let tableViewString = "tableview"
-        let views: [String: Any] = [
-            tableViewString: tableView,
-        ]
-
-        var constraints: [NSLayoutConstraint] = []
-
-        let verticalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[\(tableViewString)]|",
-            options: [],
-            metrics: nil,
-            views: views
-        )
-        constraints += verticalConstraints
-
-        let horizontalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[\(tableViewString)]|",
-            options: [],
-            metrics: nil,
-            views: views
-        )
-        constraints += horizontalConstraints
-
-        view.addConstraints(constraints)
+        tableView.embed(inView: view)
     }
 
     @objc

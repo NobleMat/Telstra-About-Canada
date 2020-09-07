@@ -35,7 +35,7 @@ extension APIManager: APIManaging {
             urlRequest.setValue(header.value, forHTTPHeaderField: header.name)
         }
 
-        return request(urlRequest: urlRequest)
+        return request(urlRequest: urlRequest, isImage: isImage)
     }
 }
 
