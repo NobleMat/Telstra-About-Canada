@@ -1,0 +1,15 @@
+## exclusions
+--exclude Pods
+
+## disabled rules
+--disable blankLinesAtStartOfScope, blankLinesAroundMark
+
+## format specifiers
+--patternlet inline
+--stripunusedargs closure-only
+--binarygrouping none
+--decimalgrouping none
+--hexgrouping 4,9
+--octalgrouping none
+--wrapcollections beforefirst
+--wraparguments beforefirst

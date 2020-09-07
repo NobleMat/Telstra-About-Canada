@@ -1,0 +1,21 @@
+opt_in_rules:
+  - private_outlet
+  - strong_iboutlet
+  - private_action
+
+disabled_rules:
+  - trailing_comma
+  - type_body_length
+  - file_length
+  - nesting
+  - identifier_name
+  - multiple_closures_with_trailing_closure
+  - large_tuple
+  - force_cast
+  - function_parameter_count
+
+excluded:
+  - Carthage
+  - Pods
+
+line_length: 160
